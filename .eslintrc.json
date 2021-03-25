@@ -1,0 +1,61 @@
+{
+  "env": {
+    "browser": true,
+    "jest": true,
+    "es6": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "parser": "babel-eslint",
+  "overrides": [
+    {
+      "files": ["*.jsx", "*.js"]
+    }
+  ],
+  "ignorePatterns": ["src/assets/*"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:jsx-a11y/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "allowImportExportEverywhere": true
+  },
+  "plugins": ["react", "simple-import-sort"],
+  "rules": {
+    "max-lines": ["error", 1000],
+    "no-undef": "warn",
+    "no-unused-vars": "warn",
+    "react/prop-types": 0,
+    "react/display-name": 0,
+    "react/no-string-refs": 0,
+    "no-prototype-builtins": "warn",
+    "no-extra-semi": "warn",
+    "no-mixed-spaces-and-tabs": "warn",
+    "no-console": "warn",
+    "no-eval": "error",
+    "simple-import-sort/imports": "error",
+    "jsx-a11y/no-noninteractive-tabindex": [
+      "error",
+      {
+        "tags": [],
+        "roles": ["tabpanel"]
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      { "endOfLine": "auto" },
+      { "usePrettierrc": true }
+    ]
+  }
+}

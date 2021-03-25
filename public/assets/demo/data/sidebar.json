@@ -1,0 +1,272 @@
+{
+  "items": [
+    {
+      "id": "chapter1",
+      "title": "Aircraft Management",
+      "items": [
+        {
+          "id": "sectionId1",
+          "title": "Manage Aircraft",
+          "items": [
+            {
+              "id": "subsectionId1",
+              "title": "Aircraft"
+            },
+            {
+              "id": "subsectionId2",
+              "title": "Aircraft Systems"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter2",
+      "title": "Asset Management",
+      "items": [
+        {
+          "id": "sectionId21",
+          "title": "Manage Assets",
+          "items": [
+            {
+              "id": "subsectionId211",
+              "title": "Serialized Asset"
+            },
+            {
+              "id": "subsectionId212",
+              "title": "Stock Number"
+            },
+            {
+              "id": "subsectionId212",
+              "title": "Non-Serialized Asset"
+            }
+          ]
+        },
+        {
+          "id": "sectionId22",
+          "title": "Asset Types"
+        },
+        {
+          "id": "sectionId23",
+          "title": "Manage Time Basis"
+        },
+        {
+          "id": "sectionId23",
+          "title": "Manage Time in Service"
+        }
+      ]
+    },
+    {
+      "id": "chapter3",
+      "title": "Billing and Invoicing",
+      "items": [
+        {
+          "id": "sectionId31",
+          "title": "Billing Codes"
+        },
+        {
+          "id": "sectionId22",
+          "title": "Invoice"
+        }
+      ]
+    },
+    {
+      "id": "chapter4",
+      "title": "BOW Analysis",
+      "items": [
+        {
+          "id": "sectionId41",
+          "title": "Bill Of Work Analysis",
+          "items": [
+            {
+              "id": "subsectionId211",
+              "title": "Adhoc Reports"
+            },
+            {
+              "id": "subsectionId212",
+              "title": "Bill Of Work Execution Analysis"
+            }
+          ]
+        },
+        {
+          "id": "sectionId42",
+          "title": "Task Card Execution Analysis",
+          "items": [
+            {
+              "id": "subsectionId211",
+              "title": "Task Card Work Control Center"
+            }
+          ]
+        },
+        {
+          "id": "sectionId43",
+          "title": "Utilization Analysis"
+        }
+      ]
+    },
+    {
+      "id": "chapter5",
+      "title": "BOW Execution",
+      "items": [
+        {
+          "id": "sectionId51",
+          "title": "Bill Of Work Control"
+        },
+        {
+          "id": "sectionId52",
+          "title": "Labor Plan"
+        },
+        {
+          "id": "sectionId53",
+          "title": "Manage Passdown",
+          "items": [
+            {
+              "id": "subsectionId531",
+              "title": "Passdowns"
+            },
+            {
+              "id": "subsectionId532",
+              "title": "Critical Factors"
+            },
+            {
+              "id": "subsectionId532",
+              "title": "Shift Summary"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "chapter6",
+      "title": "BOW Management",
+      "items": [
+        {
+          "id": "sectionId61",
+          "title": "Bill Of Work Planning"
+        },
+        {
+          "id": "sectionId62",
+          "title": "Bill Of Work Template"
+        },
+        {
+          "id": "sectionId63",
+          "title": "Export Bill Of Work"
+        },
+        {
+          "id": "sectionId64",
+          "title": "Import Bill Of Work"
+        },
+        {
+          "id": "sectionId65",
+          "title": "Component Bills Of Work"
+        },
+        {
+          "id": "sectionId66",
+          "title": "Scheduled Bills Of Work"
+        },
+        {
+          "id": "sectionId63",
+          "title": "Unscheduled Bills Of Work"
+        },
+        {
+          "id": "sectionId64",
+          "title": "Postdock"
+        },
+        {
+          "id": "sectionId65",
+          "title": "Predock Checklist"
+        },
+        {
+          "id": "sectionId66",
+          "title": "Process Bills Of Work"
+        }
+      ]
+    },
+    {
+      "id": "chapter7",
+      "title": "Communications"
+    },
+    {
+      "id": "chapter8",
+      "title": "Configurations"
+    },
+    {
+      "id": "chapter9",
+      "title": "Contract Management"
+    },
+    {
+      "id": "chapter10",
+      "title": "Crew Management"
+    },
+    {
+      "id": "chapter11",
+      "title": "Customer Management"
+    },
+    {
+      "id": "chapter12",
+      "title": "Electronic Logbook"
+    },
+    {
+      "id": "chapter13",
+      "title": "Electronic Task Cards"
+    },
+    {
+      "id": "chapter14",
+      "title": "Execution Planning"
+    },
+    {
+      "id": "chapter15",
+      "title": "Inventory Management and Control",
+      "items": [
+        {
+          "id": "sectionId151",
+          "title": "Inventory Audit"
+        },
+        {
+          "id": "sectionId152",
+          "title": "Inventory Request"
+        },
+        {
+          "id": "sectionId153",
+          "title": "Asset Procurement"
+        },
+        {
+          "id": "sectionId154",
+          "title": "Repair Orders"
+        },
+        {
+          "id": "sectionId155",
+          "title": "Sales Orders"
+        }
+      ]
+    },
+    {
+      "id": "chapter16",
+      "title": "Electronic Logbook"
+    },
+    {
+      "id": "chapter17",
+      "title": "Labor Collection"
+    },
+    {
+      "id": "chapter18",
+      "title": "Maintenance Forms"
+    },
+    {
+      "id": "chapter19",
+      "title": "Maintenance Requirements"
+    },
+    {
+      "id": "chapter20",
+      "title": "Schedules"
+    },
+    {
+      "id": "chapter21",
+      "title": "Security"
+    },
+    {
+      "id": "chapter22",
+      "title": "Tooling Management"
+    }
+  ]
+}

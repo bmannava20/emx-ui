@@ -1,0 +1,12 @@
+{
+  "trailingComma": "none",
+  "semi": true,
+  "overrides": [
+    {
+      "files": "*.css",
+      "options": {
+        "parser": "css"
+      }
+    }
+  ]
+}

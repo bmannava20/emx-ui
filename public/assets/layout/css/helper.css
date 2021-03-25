@@ -1,0 +1,291 @@
+/* Page content */
+.content {
+  padding: 16px;
+}
+
+/* The sticky class is added to the header with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+}
+
+#background-blue .topbar-left {
+  width: 33%;
+}
+
+#background-blue .topbar-middle {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: inline-block;
+  width: 33%;
+  text-align: center;
+}
+
+#background-blue .topbar-right {
+  width: 33%;
+}
+
+#background-blue .topbar-middle span,
+#background-blue .topbar-middle i {
+  vertical-align: middle;
+}
+
+#background-blue .topbar-middle i {
+  font-size: 1.5rem;
+  padding-left: 1rem;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the header gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 102px;
+}
+
+#dropdown,
+#action {
+  position: unset;
+  opacity: unset;
+}
+
+.opacity-blur {
+  opacity: 0.5;
+}
+
+.fill-width {
+  width: 100%;
+}
+
+.addnew {
+  height: 600px;
+  padding-left: 25px;
+}
+
+.center-radio {
+  width: 100%;
+  display: flex;
+  padding: 15px;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.p-fileupload-content {
+  position: unset !important;
+}
+
+label {
+  color: #848484;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.p-button {
+  color: #fff;
+  background: #006a79;
+  border: 1px solid #006a79;
+  opacity: 1;
+  font-family: sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  text-align: center;
+  height: 39px;
+  padding: 0 5px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  border-radius: 0;
+  position: unset !important;
+}
+
+.p-button:enabled:hover {
+  background: #00c3df;
+  border-color: #006a79;
+}
+
+.p-button:focus {
+  box-shadow: none;
+}
+
+.p-inputtextarea {
+  color: #000;
+  border-color: #bbb;
+  font-weight: normal;
+  font-family: sans-serif;
+  font-size: 13px;
+  background-color: white;
+}
+.p-dropdown-label {
+  color: #000;
+  background-color: inherit;
+  border-color: #bbb;
+  font-weight: normal;
+  font-family: sans-serif;
+  font-size: 13px;
+  padding-left: 0px !important;
+}
+.p-fileupload-content > div {
+  color: #000;
+  background-color: inherit;
+  border-color: #bbb;
+  font-weight: normal;
+  font-family: sans-serif;
+  font-size: 13px;
+}
+
+.p-fileupload-choose:not(.p-disabled):hover {
+  background: #00c3df;
+  border-color: #006a79;
+}
+
+.p-inputtext {
+  font-weight: normal;
+  font-family: sans-serif;
+  font-size: 13px;
+}
+
+.p-inputtext-height {
+  height: 43px;
+}
+
+.p-dropdown-panel .p-dropdown-items {
+  padding: 0px;
+}
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item {
+  padding: 0.5rem;
+}
+.p-dropdown-panel .p-dropdown-items .p-dropdown-item.p-highlight {
+  color: white;
+  background: #0d89ec;
+}
+
+.layout-search .search-container {
+  height: 800px;
+  padding-top: 0px;
+  padding: 1rem;
+}
+
+body,
+.layout-content-wrapper {
+  min-height: unset;
+}
+.layout-sidebar-darkgray .layout-sidebar .layout-menu li a,
+.layout-sidebar-darkgray .layout-sidebar .layout-menu li .p-link {
+  background: transparent;
+}
+.layout-menu {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+.layout-sidebar-darkgray
+  .layout-sidebar
+  .layout-menu
+  .layout-root-menuitem
+  > ul
+  > li.active-menuitem {
+  background: transparent;
+}
+.alignText {
+  vertical-align: top;
+}
+
+.p-inputtext:enabled:focus {
+  outline: 0 none;
+  outline-offset: 0;
+  /* box-shadow: 0px 0px 2px 2px #d0cece; */
+  /* border-color: grey; */
+  border-color: #bbb;
+  box-shadow: 0 0 2px #c9c9c9;
+}
+
+.p-inputtext:enabled:hover {
+  border-color: #bbb;
+}
+.p-breadcrumb {
+  border: none;
+  padding: 0.5rem 1rem;
+}
+
+.p-1 {
+  padding-left: 1rem;
+}
+
+.p-dialog .p-dialog-header {
+  background: #54c5d5;
+  padding: 1rem;
+  color: white;
+}
+
+.confirmation-content {
+  margin: 25px 0px 0px 0px;
+}
+
+video {
+  height: 100%;
+  width: 90%;
+  max-width: 500px;
+}
+
+.p-fileupload-content > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.p-fileupload-row > div {
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  /* width: 25%; */
+  width: unset !important;
+}
+
+.p-fileupload-row {
+  word-break: break-all;
+}
+
+@media screen and (max-width: 576px) {
+  .company-label {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .mt-4 {
+    margin-top: 4.5rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .layout-wrapper .layout-search .search-container {
+    width: 100%;
+  }
+
+  .p-field {
+    width: 100% !important;
+    margin-bottom: 1rem;
+  }
+
+  video {
+    height: 100%;
+    width: 250px;
+  }
+
+  #background-blue .topbar-middle {
+    width: 67%;
+    text-align: right;
+  }
+  #background-blue .topbar-right {
+    width: 0%;
+  }
+}

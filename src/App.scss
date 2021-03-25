@@ -1,0 +1,118 @@
+$gutter: 1rem;
+
+@import "node_modules/primeflex/primeflex.scss";
+
+@import "prismjs/themes/prism-coy.css";
+@import "@fullcalendar/core/main.css";
+@import "@fullcalendar/daygrid/main.css";
+@import "@fullcalendar/timegrid/main.css";
+@import "./AppDemo.scss";
+
+.layout-sidebar {
+  flex-direction: unset;
+  width: 24rem;
+}
+
+.layout-menu-container {
+  flex: unset;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 96%;
+  padding: 0;
+  overflow: hidden;
+}
+
+.layout-sidebar-darkgray .layout-sidebar {
+  border-right: 0 none;
+  background-image: none;
+  box-shadow: none;
+}
+
+.layout-menu .layout-root-menuitem > .layout-menuitem-root-text {
+  padding: 0;
+}
+
+.required-field {
+  border: 1px solid red !important;
+}
+.form-control {
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.form-control {
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.custom-select,
+.form-input-ctrl {
+  font-weight: 400;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 13px;
+  border: 1px solid #bbb;
+  padding: 6px 25px 6px 5px;
+  color: #000;
+}
+
+.p-tabview .p-tabview-panels {
+  overflow-y: scroll;
+  height: calc(100vh - 100px);
+}
+
+.layout-content {
+  overflow-y: scroll;
+  height: calc(100vh - 100px);
+}
+
+.p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
+  color: #0097ac;
+  border-color: #0097ac;
+}
+
+.p-tabview .p-tabview-nav li .p-tabview-nav-link:not(.p-disabled):focus {
+  box-shadow: none;
+}
+
+.textEditor {
+  background: white;
+  border: 1px solid #bbb;
+}
+
+@media screen and (min-width: 992px) {
+  .layout-wrapper .layout-topbar {
+    padding: 0px;
+  }
+
+  .layout-wrapper.layout-static .layout-content-wrapper {
+    margin-left: 24rem;
+  }
+
+  .layout-wrapper.layout-static.layout-static-inactive .layout-content-wrapper {
+    margin-left: 0;
+  }
+
+  .layout-sidebar-darkgray .layout-sidebar {
+    top: 4.5rem;
+  }
+
+  .layout-wrapper.layout-static .layout-topbar .topbar-left .menu-button {
+    display: none;
+  }
+
+  .layout-wrapper.layout-static-inactive .layout-topbar {
+    padding: 0px 2px;
+  }
+
+  .layout-wrapper.layout-static-inactive .layout-sidebar {
+    transform: translateX(-95%);
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .p-tabview .p-tabview-panels {
+    height: calc(100vh - 50px);
+  }
+}

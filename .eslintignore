@@ -1,0 +1,5 @@
+# Ignore artifacts:
+build
+scheduler-4.0.7
+node_modules
+src/serviceWorker.js
