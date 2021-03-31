@@ -34,7 +34,7 @@ const AppTopbar = (props) => {
       }
     ];
   }
-  if (localStorage.getItem("section")) {
+  if (localStorage.getItem("section") && localStorage.getItem("chapter")) {
     items = [
       {
         label: getLabel("chapter"),
@@ -46,7 +46,11 @@ const AppTopbar = (props) => {
       }
     ];
   }
-  if (localStorage.getItem("subSection")) {
+  if (
+    localStorage.getItem("subSection") &&
+    localStorage.getItem("section") &&
+    localStorage.getItem("chapter")
+  ) {
     items = [
       {
         label: getLabel("chapter"),

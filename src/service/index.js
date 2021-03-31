@@ -14,7 +14,7 @@ if (
 const onSuccess = (message) => {
   toast.success(message, {
     position: "top-right",
-    autoClose: 5000,
+    autoClose: 2000,
     hideProgressBar: false,
     closeOnClick: true,
     pauseOnHover: true,
@@ -29,7 +29,7 @@ axios.interceptors.request.use(
   (error) => {
     toast.error(error.response.data, {
       position: "top-right",
-      autoClose: 3000,
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,
@@ -57,7 +57,7 @@ axios.interceptors.response.use(
   (error) => {
     toast.error(error.response && error.response.data, {
       position: "top-right",
-      autoClose: 3000,
+      autoClose: 2000,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,

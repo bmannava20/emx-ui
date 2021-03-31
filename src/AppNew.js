@@ -149,9 +149,10 @@ const AppNew = (props) => {
       )
       .then((res) => {
         localStorage.clear();
-        localStorage.setItem("chapter", JSON.stringify(res));
+        // localStorage.setItem("chapter", JSON.stringify(res));
         history.push({ pathname: `/formlayout/${res.id}`, state: res });
-        props.dispatchFun("GetData");
+        //props.dispatchFun("GetData");
+        localStorage.setItem("chapter", JSON.stringify(res));
       });
   };
 
@@ -179,9 +180,10 @@ const AppNew = (props) => {
         file
       )
       .then((res) => {
-        localStorage.setItem("section", JSON.stringify(res));
         history.push({ pathname: `/formlayout/${res.id}`, state: res });
-        props.dispatchFun("GetData");
+        //props.dispatchFun("GetData");
+        localStorage.setItem("chapter", JSON.stringify(res.chapter));
+        localStorage.setItem("section", JSON.stringify(res));
       });
   };
 
@@ -210,9 +212,12 @@ const AppNew = (props) => {
         file
       )
       .then((res) => {
-        localStorage.setItem("subSection", JSON.stringify(res));
+        // localStorage.setItem("subSection", JSON.stringify(res));
         history.push({ pathname: `/formlayout/${res.id}`, state: res });
-        props.dispatchFun("GetData");
+        //props.dispatchFun("GetData");
+        localStorage.setItem("chapter", JSON.stringify(res.section.chapter));
+        localStorage.setItem("section", JSON.stringify(res.section));
+        localStorage.setItem("subSection", JSON.stringify(res));
       });
   };
 
@@ -366,6 +371,7 @@ const AppNew = (props) => {
                 } else if (onSelect == "SubSection") {
                   addSubSection(curData);
                 }
+                props.onSearchClick();
               }
             }}
           ></Button>

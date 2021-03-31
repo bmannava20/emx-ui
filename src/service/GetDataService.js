@@ -2,26 +2,18 @@ import axios from "./index";
 
 export default class GetDataService {
   getSidebarData(id) {
-    let config = {
-      headers: {
-        company_id: "JOR",
-        user_id: "emx"
-      }
-    };
-    return axios.get(`/contents`, config).then((res) => res.data);
+    return axios.get(`/contents`).then((res) => res.data);
     //return axios.get(`/contents/${id}`).then((res) => res.data);
     // set company_id in header and remove id from here. user_id can be something like 'emx'
   }
 
   getChapterDropDwnData(companyId) {
-    return axios
-      .get(`/getChaptersForCompany/${companyId}`)
-      .then((res) => res.data);
+    return axios.get(`/getChaptersForCompany`).then((res) => res.data);
   }
 
   getSectionDropDwnData(chapterId, companyId) {
     return axios
-      .get(`/getSectionsForChapter/${chapterId}/${companyId}`)
+      .get(`/getSectionsForChapter/${chapterId}`)
       .then((res) => res.data);
   }
 

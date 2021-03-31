@@ -46,10 +46,6 @@ export const FormLayoutDemo = (props) => {
     }
   }, [history.location]);
 
-  useEffect(() => {
-    //console.log('history.location.state',history.location.state,history);
-  }, [history.location.state]);
-
   const onDelete = () => {
     const getDataService = new GetDataService();
 
@@ -57,8 +53,8 @@ export const FormLayoutDemo = (props) => {
       localStorage.clear();
       getDataService.deleteChapter(data.id).then((data) => {
         console.log("chapter", data);
-        //props.onDispatch("GetData");
-        // setDisplayConfirmation(false);
+        props.onDispatch("GetData");
+        setDisplayConfirmation(false);
         setTimeout(() => {
           history.go(0);
         }, 2000);
@@ -68,8 +64,8 @@ export const FormLayoutDemo = (props) => {
       localStorage.setItem("section", "");
       getDataService.deleteSection(data.id).then((data) => {
         console.log("section", data);
-        //props.onDispatch("GetData");
-        //setDisplayConfirmation(false);
+        props.onDispatch("GetData");
+        setDisplayConfirmation(false);
         setTimeout(() => {
           history.go(0);
         }, 2000);
@@ -79,8 +75,8 @@ export const FormLayoutDemo = (props) => {
       localStorage.setItem("subSection", "");
       getDataService.deleteSubsection(data.id).then((data) => {
         console.log("subsection", data);
-        //props.onDispatch("GetData");
-        //setDisplayConfirmation(false);
+        props.onDispatch("GetData");
+        setDisplayConfirmation(false);
         setTimeout(() => {
           history.go(0);
         }, 2000);

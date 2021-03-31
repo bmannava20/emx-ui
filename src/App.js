@@ -2,10 +2,6 @@ import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 import "primeflex/primeflex.css";
 import "./App.scss";
-import "primereact/resources/primereact.min.css";
-import "primeicons/primeicons.css";
-import "primeflex/primeflex.css";
-import "./App.scss";
 import "react-toastify/dist/ReactToastify.css";
 
 import classNames from "classnames";
@@ -13,13 +9,11 @@ import PrimeReact from "primereact/utils";
 import React, { useEffect, useReducer, useRef, useState } from "react";
 import { Route } from "react-router-dom";
 import { useHistory } from "react-router-dom";
-import { toast, ToastContainer } from "react-toastify";
+import { ToastContainer } from "react-toastify";
 
 import AppConfig from "./AppConfig";
-import AppFooter from "./AppFooter";
 import AppMenu from "./AppMenu";
 import AppNew from "./AppNew";
-import AppRightMenu from "./AppRightMenu";
 import AppTopBar from "./AppTopbar";
 import { FormLayoutDemo } from "./components/FormLayoutDemo";
 import GetDataService from "./service/GetDataService";
@@ -44,7 +38,6 @@ const App = () => {
     topbarNotificationMenuActive,
     setTopbarNotificationMenuActive
   ] = useState(false);
-  const [rightMenuActive, setRightMenuActive] = useState(false);
   const [configActive, setConfigActive] = useState(false);
   const [inputStyle, setInputStyle] = useState("outlined");
   const [ripple, setRipple] = useState(false);
@@ -63,6 +56,11 @@ const App = () => {
   let notificationMenuClick = false;
   let rightMenuClick = false;
   let configClick = false;
+
+  useEffect(() => {
+    const list = history.location.pathname.split("/");
+    setId(list[list.length - 1]);
+  }, [history.location]);
 
   const getLatestList = (list, id) => {
     let flagParent = false;
@@ -83,7 +81,7 @@ const App = () => {
     return { items, flag: flagParent };
   };
 
-  const getData = () => {
+  const getData = (id) => {
     const getDataService = new GetDataService(
       process.env.TRAINING_APP_BASE_URL
     );
@@ -103,9 +101,10 @@ const App = () => {
   };
 
   const reducerFun = (state = menuList, action) => {
+    console.log(action);
     switch (action) {
       case "GetData":
-        return getData();
+        return getData(id);
       default:
         return state;
     }
@@ -115,8 +114,11 @@ const App = () => {
   const [sidebarList, dispatch] = useReducer(reducerFun, menuList);
 
   useEffect(() => {
-    getData();
-  }, [id]);
+    // console.log(id);
+    const list = history.location.pathname.split("/");
+    setId(list[list.length - 1]);
+    getData(list[list.length - 1]);
+  }, [history.location]);
 
   const menu = [
     {
@@ -135,15 +137,6 @@ const App = () => {
       location: history.location
     }
   ];
-
-  useEffect(() => {
-    if (staticMenuMobileActive) {
-      resetLayoutWidths();
-      blockBodyScroll();
-    } else {
-      unblockBodyScroll();
-    }
-  }, [staticMenuMobileActive]);
 
   const onInputStyleChange = (inputStyle) => {
     setInputStyle(inputStyle);
@@ -165,10 +158,6 @@ const App = () => {
 
     if (!notificationMenuClick) {
       setTopbarNotificationMenuActive(false);
-    }
-
-    if (!rightMenuClick) {
-      setRightMenuActive(false);
     }
 
     if (!menuClick) {
@@ -203,7 +192,6 @@ const App = () => {
     menuClick = true;
     setTopbarUserMenuActive(false);
     setTopbarNotificationMenuActive(false);
-    setRightMenuActive(false);
 
     if (isOverlay()) {
       setOverlayMenuActive((prevOverlayMenuActive) => !prevOverlayMenuActive);
@@ -297,13 +285,7 @@ const App = () => {
     searchClick = false;
   };
 
-  const onRightMenuClick = () => {
-    rightMenuClick = true;
-  };
-
   const onRightMenuButtonClick = (event) => {
-    rightMenuClick = true;
-    setRightMenuActive((prevRightMenuActive) => !prevRightMenuActive);
     hideOverlayMenu();
     event.preventDefault();
   };
@@ -380,7 +362,7 @@ const App = () => {
       <div className="header sticky">
         <AppTopMainBar />
       </div>
-      {/* eslint-disable */}
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events,jsx-a11y/no-static-element-interactions */}
       <div
         className={containerClassName}
         data-theme={colorScheme}
@@ -403,23 +385,6 @@ const App = () => {
 
           <div className="layout-content">
             {routers.map((router, index) => {
-              if (router.exact) {
-                return (
-                  <Route
-                    key={`router${index}`}
-                    path={router.path}
-                    exact
-                    render={(props) => (
-                      <FormLayoutDemo
-                        {...props}
-                        onDispatch={(action) => {
-                          dispatch(action);
-                        }}
-                      />
-                    )}
-                  />
-                );
-              }
               return (
                 <Route
                   key={`router${index}`}
@@ -436,7 +401,6 @@ const App = () => {
               );
             })}
           </div>
-          <AppFooter />
         </div>
 
         {menu && (
@@ -459,10 +423,6 @@ const App = () => {
             setMenuActiveTabIndex={setMenuActiveTabIndex}
           ></AppMenu>
         )}
-        <AppRightMenu
-          rightMenuActive={rightMenuActive}
-          onRightMenuClick={onRightMenuClick}
-        ></AppRightMenu>
 
         <AppConfig
           configActive={configActive}
