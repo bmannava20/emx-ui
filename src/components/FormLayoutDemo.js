@@ -33,14 +33,20 @@ export const FormLayoutDemo = (props) => {
     const getDataService = new GetDataService();
     if (curId && chapter && curId == chapter.id) {
       getDataService.retrieveChapter(curId).then((data) => {
+        localStorage.setItem("chapter", JSON.stringify(data));
         setData(data);
       });
     } else if (curId && section && curId == section.id) {
       getDataService.retrieveSection(curId).then((data) => {
+        localStorage.setItem("chapter", JSON.stringify(data.chapter));
+        localStorage.setItem("section", JSON.stringify(data));
         setData(data);
       });
     } else if (curId && subSection && curId == subSection.id) {
       getDataService.retrieveSubsection(curId).then((data) => {
+        localStorage.setItem("chapter", JSON.stringify(data.section.chapter));
+        localStorage.setItem("section", JSON.stringify(data.section));
+        localStorage.setItem("subSection", JSON.stringify(data));
         setData(data);
       });
     }
